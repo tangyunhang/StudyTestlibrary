@@ -1,0 +1,40 @@
+server:
+  port: 8083
+# 设置Spring-Data-JPA
+spring:
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  # 配置数据源
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://121.43.114.196:3308/test?useUnicode=true&characterEncoding=utf8
+    #    url: jdbc:mysql:///test?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    # 当前服务的名称：注册到注册
+    name: msc-demoTyh
+  cloud:
+    nacos:
+      discovery:
+        # 注册中心地址
+        server-addr: 121.43.114.196:8845
+  main:
+    allow-bean-definition-overriding: true
+
+# 配置日志
+logging:
+  pattern:
+    console: level-%level %msg%n
+  level:
+    root: info
+    org.hibernate: info
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.hibernate.type.descriptor.sql.BasicExtractor: trace
+    com.abc: debug
+user:
+  name: "tangyunhang"
