@@ -6,7 +6,7 @@ spring:
     generate-ddl: true
     show-sql: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
   # 配置数据源
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -29,12 +29,12 @@ spring:
 # 配置日志
 logging:
   pattern:
-    console: level-%level %msg%n
+    console: level-%level %t%msg%n
   level:
     root: info
     org.hibernate: info
-    org.hibernate.type.descriptor.sql.BasicBinder: trace
-    org.hibernate.type.descriptor.sql.BasicExtractor: trace
+#    org.hibernate.type.descriptor.sql.BasicBinder: trace
+#    org.hibernate.type.descriptor.sql.BasicExtractor: trace
     com.abc: debug
 user:
-  name: "tangyunhang"
+  name: "青衣醉"
